@@ -16,20 +16,20 @@ Você faz parte de uma empresa de soluções de pagamentos, a Boulder Co., e seu
 
 3. Baseando-se nas imagens em `assets/layouts`, crie uma tela de login da aplicação (`assets/layouts/login.png`):
     - Autentique o usuário fazendo um `POST` para o endpoint `http://localhost:3000/api/user/login`.
-    - Os seguintes usuários foram previamente configurados:
-  ```
-  [
-      {
-          email: 'john@gmail.com',
-          password: 'passwd'
-      },
-      {
-          email: 'bill@gmail.com',
-          password: 'test123'
-      }
-  ]
-  ```
     - A autenticação deve considerar tratamento de dados e feedback para o usuário.
+    - Os seguintes usuários foram previamente configurados:
+    ```
+    [
+        {
+            email: 'john@gmail.com',
+            password: 'passwd'
+        },
+        {
+            email: 'bill@gmail.com',
+            password: 'test123'
+        }
+    ]
+    ```
 
 4. Crie telas de exibição da lista de clientes e criação de novo cliente com base nos arquivos `assets/layouts/clients.png` e `assets/layouts/clients-create.png`:
     - Para obter a lista de clientes, utilize um `GET` para o endpoint `/api/clients`.
