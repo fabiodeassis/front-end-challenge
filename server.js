@@ -641,7 +641,7 @@ app.get('/api/clients/', function (req, res) {
             status: client.status
         }
     })
-    res.json({ clients });
+    res.json({ clients: mappedClients });
 });
 
 app.get('/api/client/:id', function (req, res) {
