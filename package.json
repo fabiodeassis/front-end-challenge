@@ -1,0 +1,24 @@
+{
+  "name": "front-end-challenge",
+  "version": "1.0.0",
+  "description": "Desafio técnico de Front End",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RickCardoso/front-end-challenge.git"
+  },
+  "author": "RickCardoso",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RickCardoso/front-end-challenge/issues"
+  },
+  "homepage": "https://github.com/RickCardoso/front-end-challenge#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.0"
+  }
+}
