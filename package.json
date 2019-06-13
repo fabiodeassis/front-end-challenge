@@ -1,12 +1,8 @@
 {
   "name": "front-end-challenge",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Desafio técnico de Front End",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
+  "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/RickCardoso/front-end-challenge.git"
@@ -17,8 +13,28 @@
     "url": "https://github.com/RickCardoso/front-end-challenge/issues"
   },
   "homepage": "https://github.com/RickCardoso/front-end-challenge#readme",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "express": "^4.17.0"
+    "core-js": "^2.6.5",
+    "register-service-worker": "^1.6.2",
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.3"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.8.0",
+    "@vue/cli-plugin-eslint": "^3.8.0",
+    "@vue/cli-plugin-pwa": "^3.8.0",
+    "@vue/cli-service": "^3.8.0",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.1.0",
+    "vue-template-compiler": "^2.6.10"
   }
 }

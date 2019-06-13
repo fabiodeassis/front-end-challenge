@@ -1,5 +1,36 @@
 # front-end-challenge
 
+## Project setup
+```
+yarn install
+```
+
+### Compiles and hot-reloads for development
+```
+yarn run serve
+```
+
+### Compiles and minifies for production
+```
+yarn run build
+```
+
+### Run your tests
+```
+yarn run test
+```
+
+### Lints and fixes files
+```
+yarn run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+# front-end-challenge [original readme]
+
 ## Contextualização
 
 Você faz parte de uma empresa de soluções de pagamentos, a Boulder Co., e seu trabalho como desenvolvedor front end é fazer um portal administrativo para clientes internos. A ideia é que esse portal evolua muito mais posteriormente, mas o propósito inicial dele é para gestão de clientes e visualização das transações de cada um.
