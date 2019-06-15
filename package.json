@@ -1,22 +1,15 @@
 {
   "name": "front-end-challenge",
   "version": "2.0.0",
-  "description": "Desafio técnico de Front End",
   "private": true,
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/RickCardoso/front-end-challenge.git"
-  },
+  "description": "Desafio técnico de Front End",
   "author": "RickCardoso",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/RickCardoso/front-end-challenge/issues"
-  },
-  "homepage": "https://github.com/RickCardoso/front-end-challenge#readme",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "storybook:build": "vue-cli-service storybook:build -c .storybook",
+    "storybook:serve": "vue-cli-service storybook:serve -p 6006 -c .storybook"
   },
   "dependencies": {
     "core-js": "^2.6.5",
@@ -25,16 +18,33 @@
     "vue-router": "^3.0.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@storybook/addon-actions": "^4.1.0 || ^5.0.0",
+    "@storybook/addon-knobs": "^4.1.0 || ^5.0.0",
+    "@storybook/addon-links": "^4.1.0 || ^5.0.0",
+    "@storybook/addon-notes": "^4.1.0 || ^5.0.0",
     "@vue/cli-plugin-babel": "^3.8.0",
     "@vue/cli-plugin-eslint": "^3.8.0",
     "@vue/cli-plugin-pwa": "^3.8.0",
     "@vue/cli-service": "^3.8.0",
     "@vue/eslint-config-standard": "^4.0.0",
     "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.6",
+    "babel-preset-vue": "^2.0.2",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
+    "vue-cli-plugin-storybook": "^0.6.1",
     "vue-template-compiler": "^2.6.10"
+  },
+  "bugs": {
+    "url": "https://github.com/RickCardoso/front-end-challenge/issues"
+  },
+  "homepage": "https://github.com/RickCardoso/front-end-challenge#readme",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RickCardoso/front-end-challenge.git"
   }
 }
