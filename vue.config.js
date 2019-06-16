@@ -6,6 +6,15 @@ module.exports = {
   devServer: {
     before: configureAPI
   },
+  css: {
+    loaderOptions: {
+      sass: {
+        data: `
+          @import "@/assets/styles/_variables.scss";
+        `
+      }
+    }
+  },
   pwa: {
     name: manifest.name,
     themeColor: manifest.theme_color,
