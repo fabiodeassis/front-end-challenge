@@ -1,18 +1,23 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <bldrUiBrand model="full over-primary" />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import bldrUiBrand from '@/ui-lib/Brand/Brand.vue'
 
 export default {
   name: 'home',
   components: {
-    HelloWorld
+    bldrUiBrand
   }
 }
 </script>
+
+<style scoped lang="scss">
+.home {
+  padding: 50px 20px;
+  text-align: center;
+}
+</style>

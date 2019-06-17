@@ -1,7 +1,7 @@
 <template>
   <header v-bind:class="{ logged: authenticated }">
     <div class="logo">
-      <bldrUiBrand />
+      <bldrUiBrand model="name over-grey-light" />
     </div>
     <slot></slot>
   </header>
@@ -30,7 +30,8 @@ header {
   display: flex;
   height: $header-height;
   -webkit-box-pack: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 5px 20px;
   position: relative;
   text-align: center;
   transform: translate(0, -#{$header-height});

@@ -3,7 +3,6 @@
     <bldHeader v-bind:authenticated="authenticated">
       <div id="nav">
         <router-link to="/">Home</router-link> |
-        <router-link to="/about">About</router-link> |
         <router-link to="/clients">Clients</router-link> |
         <router-link v-if="authenticated" to="/login" v-on:click.native="logout()" replace>Logout</router-link>
       </div>

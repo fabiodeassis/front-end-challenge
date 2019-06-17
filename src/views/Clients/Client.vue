@@ -1,9 +1,11 @@
 <template>
-  <div class="client">
-    <h1>This is an Client page</h1>
-    <h2>User {{ $route.params.id }}</h2>
+  <div class="page-container client">
+    <h2 class="page-title">Dados do Cliente</h2>
+    <div class="rounded-box">
+      <h3 class="title">{{client.name}}</h3>
+      <p>{{client}}</p>
+    </div>
     <router-link :to="{ name: 'transactions', params: { id: client.id }}">Ver Transações</router-link>
-    <p>{{client}}</p>
   </div>
 </template>
 

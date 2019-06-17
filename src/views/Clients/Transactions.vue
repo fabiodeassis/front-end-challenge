@@ -1,8 +1,9 @@
 <template>
-  <div class="clients">
-    <h1>This is an Transactions page</h1>
-    <h2>User {{ $route.params.id }}</h2>
-    <div v-for="transaction in transactions" :key="transaction.id">{{transaction}}</div>
+  <div class="page-container transactions">
+    <h2 class="page-title">Transacional :: </h2>
+    <div class="rounded-list" v-for="transaction in transactions" :key="transaction.id">
+      {{transaction.date}} {{transaction.brand.name}} {{transaction.bin}} {{transaction.status.description}}
+    </div>
   </div>
 </template>
 

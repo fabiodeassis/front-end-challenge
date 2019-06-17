@@ -18,3 +18,48 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.pointer {
+  cursor: pointer;
+}
+
+.page-container {
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 1.2em 0;
+  width: 90%;
+  .page-title {
+    font-size: 1.25em;
+    font-weight: inherit
+  }
+}
+
+.rounded-box,
+.rounded-list {
+  background-color: $grey-lighter;
+  overflow: hidden;
+  padding: 1em;
+}
+.rounded-box {
+  border-radius: 1em;
+  box-shadow: 0 .333em .666em rgba(0, 0, 0, 0.5);
+  .title {
+    font-size: 1em;
+  }
+}
+
+.rounded-list {
+  border-radius: .3em;
+  box-shadow: 0 .13em .33em rgba(0, 0, 0, 0.5);
+  display: block;
+  margin-bottom: 1em;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &.pointer {
+    transition: box-shadow .3s ease-in-out;
+    &:hover {
+      box-shadow: 0 .333em .666em rgba(0, 0, 0, 0.5);
+    }
+  }
+}
