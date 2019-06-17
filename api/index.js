@@ -23,11 +23,11 @@ module.exports = app => {
         });
     });
 
-    app.post('/api/user/login', function (req, res) {
+    app.post('/api/login', function (req, res) {
         const payload = req.body;
 
-        if(apiData.auth[payload.email] && apiData.auth[payload.email] === payload.password) {
-            res.status(200).json(apiData.users[payload.email]);
+        if(apiData.auth[payload.username] && apiData.auth[payload.username] === payload.password) {
+            res.status(200).json(apiData.users[payload.username]);
         } else {
             res.sendStatus(401);
         }
@@ -52,18 +52,18 @@ module.exports = app => {
         res.json({ clients: mappedClients });
     });
 
-    app.get('/api/client/:id', function (req, res) {
+    app.get('/api/clients/:id', function (req, res) {
         let client = apiData.clients.find((client) => client.id.toString() === req.params.id.toString());
         res.json({ client });
     });
 
-    app.patch('/api/client/:id', (req, res) => {
+    app.patch('/api/clients/:id', (req, res) => {
         let index = apiData.clients.findIndex((client) => client.id.toString() === req.params.id.toString());
         Object.assign(apiData.clients[index], req.body);
         res.status(200).json({ status: 'success' });
     });
 
-    app.post('/api/client/', (req, res) => {
+    app.post('/api/clients/', (req, res) => {
         const topId = apiData.clients.map(client => client.id).reduce((a, b) => {
             if (a > b) return a
             else return b
@@ -76,7 +76,7 @@ module.exports = app => {
         res.status(200).json({ status: 'success' });
     });
 
-    app.get('/api/client/:id/transactions', (req, res) => {
+    app.get('/api/clients/:id/transactions', (req, res) => {
         const transactions = apiData.transaction.filter(transaction => transaction.clientId.toString() === req.params.id.toString());
 
         res.json(transactions.map(transaction => {
