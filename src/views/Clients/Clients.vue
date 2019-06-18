@@ -1,7 +1,10 @@
 <template>
   <div class="page-container clients">
-    <h2 class="page-title">Clientes</h2>
+    <h2 class="page-title">
+      Clientes <router-link v-bind:to="{ name: 'new'}">Novo</router-link>
+    </h2>
     <bldrUiClientLink v-for="client in clients" :key="client.id" v-bind:to="{ name: 'client', params: { id: client.id }}" v-bind:object="{number: client.id, description: client.name, status: client.status.description}"></bldrUiClientLink>
+    <router-view></router-view>
   </div>
 </template>
 

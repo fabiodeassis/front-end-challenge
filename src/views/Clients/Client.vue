@@ -1,10 +1,13 @@
 <template>
   <div class="page-container client">
-    <h2 class="page-title">Dados do Cliente</h2>
+    <h2 class="page-title">
+      Dados do Cliente <router-link v-bind:to="{ name: 'edit'}">Editar</router-link>
+    </h2>
     <div class="rounded-box">
       <h3 class="title">{{client.name}}</h3>
       <p>{{client}}</p>
     </div>
+    <router-view></router-view>
     <router-link :to="{ name: 'transactions', params: { id: client.id }}">Ver Transações</router-link>
   </div>
 </template>
