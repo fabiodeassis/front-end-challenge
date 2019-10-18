@@ -7,7 +7,7 @@ export default class Api extends Http {
   /**
    * @type {String}
    */
-  static base = '/api'
+  static base = 'http://192.168.0.177:8080/api'
 
   /**
    * @param {String} path

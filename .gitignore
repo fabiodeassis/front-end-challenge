@@ -45,6 +45,7 @@ testem.log*
 /coverage
 /libpeerconnection.log
 /typings
+/storybook-static
 
 # System Files
 .DS_Store

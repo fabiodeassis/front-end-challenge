@@ -1,0 +1,17 @@
+{
+  "appId": "br.com.f2p.challenge",
+  "appName": "frontend-challenge",
+  "bundledWebRuntime": false,
+  "npmClient": "yarn",
+  "webDir": "dist",
+  "server": {
+    "allowNavigation": [
+      "http://192.168.0.177:8080"
+    ]
+  },
+  "plugins": {
+    "LocalNotifications": {
+      "smallIcon": "ic_stat_icon_config_sample"
+    }
+  }
+}

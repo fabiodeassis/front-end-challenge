@@ -2,7 +2,7 @@ const manifest = require('./public/manifest.json')
 const configureAPI = require('./api')
 
 module.exports = {
-  publicPath: '/frontend-challenge',
+  publicPath: '/',
   devServer: {
     before: configureAPI
   },
