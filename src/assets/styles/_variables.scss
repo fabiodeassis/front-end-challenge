@@ -1,11 +1,263 @@
-$primary: #2F8CC6;
-$bg-color: $primary;
+/* COLORS */
 
-$grey-dark: #2e2e2e;
-$grey-lighter: #EBEBEB;
+// Grey Scale
+$light: #fff !default;
+$grey-lightest: #EDEEF0 !default;
+$grey-lighter: #DCE0E3 !default;
+$grey-light: #939393 !default;
+$grey: #6a6a6a !default;
+$grey-darker: #3c3c3c !default;
+$grey-darkest: #1b1b1b !default;
+$dark: #000 !default;
 
-$font-default: 'Open Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-$font-coursive: 'Revalia', cursive;
+/**
+ * DEFAULT SKIN
+ */// Primary Pallet
+    $primary: #3C663A !default;
+    $primary-avid: #8FF28A !default;
+    $primary-vivid: #6AB366 !default;
+    $primary-darth: #447341 !default;
 
-$header-height: 70px;
-$sm-header-height: 50px;
+    // Secondary Pallet
+    $secondary: #4F8898 !default;
+    $secondary-avid: #77CEE6 !default;
+    $secondary-vivid: #5695A6 !default;
+    $secondary-darth: #2E5059 !default;
+
+    // System Pallet
+    $color-warning: #E2D647 !default;
+    $color-warn-darth: #E28D47 !default;
+    $color-danger: #E04848 !default;
+    $color-contrast: #8447D7 !default;
+    $color-success: $primary-avid !default;
+    $color-info: $secondary-avid !default;
+    $color-darth: #2B2B2B !default;
+
+    // Structure Colors
+    $content-bg: $grey-lightest !default;
+
+/**
+ * protanopia SKIN
+ */// Primary Pallet
+    $protanopia-primary: #655d39 !default;
+    $protanopia-primary-avid: #f0db81 !default;
+    $protanopia-primary-vivid: #b1a160 !default;
+    $protanopia-primary-darth: #72683f !default;
+
+    // Secondary Pallet
+    $protanopia-secondary: #7b7e91 !default;
+    $protanopia-secondary-avid: #bbbfdd !default;
+    $protanopia-secondary-vivid: #878a9e !default;
+    $protanopia-secondary-darth: #4b4c56 !default;
+
+    // System Pallet
+    $protanopia-color-warning: #ebd248 !default;
+    $protanopia-color-warn-darth: #b1a04e !default;
+    $protanopia-color-danger: #877d5b !default;
+    $protanopia-color-contrast: #0066d4 !default;
+    $protanopia-color-success: $protanopia-primary-avid !default;
+    $protanopia-color-info: $protanopia-secondary-avid !default;
+    $protanopia-color-darth: #302f2f !default;
+
+/**
+ * DEUTERANOPIA SKIN
+ */// Primary Pallet
+    $deuteranopia-primary:       #6f5941 !default;
+    $deuteranopia-primary-avid:  #ffd3a5 !default;
+    $deuteranopia-primary-vivid: #c29a6e !default;
+    $deuteranopia-primary-darth: #7d6348 !default;
+
+    // Secondary Pallet
+    $deuteranopia-secondary:       #7b7e91 !default;
+    $deuteranopia-secondary-avid:  #bdbceb !default;
+    $deuteranopia-secondary-vivid: #8988a9 !default;
+    $deuteranopia-secondary-darth: #4c4b5c !default;
+
+    // System Pallet
+    $deuteranopia-color-warning:    #ffc973 !default;
+    $deuteranopia-color-warn-darth: #c89845 !default;
+    $deuteranopia-color-danger:     #9b7740 !default;
+    $deuteranopia-color-contrast:   #006cb9 !default;
+    $deuteranopia-color-success:    $deuteranopia-primary-avid !default;
+    $deuteranopia-color-info:       $deuteranopia-secondary-avid !default;
+    $deuteranopia-color-darth:      #332d2f !default;
+
+/**
+* TRITANOPIA SKIN
+*/// Primary Pallet
+    $tritanopia-primary:       #3C663A !default;
+    $tritanopia-primary-avid:  #8ff28a !default;
+    $tritanopia-primary-vivid: #4b9846 !default;
+    $tritanopia-primary-darth: #447341 !default;
+
+    // Secondary Pallet
+    $tritanopia-secondary:       #be79ca !default;
+    $tritanopia-secondary-avid:  #b1a3bb !default;
+    $tritanopia-secondary-vivid: #8a6b90 !default;
+    $tritanopia-secondary-darth: #624b66 !default;
+
+    // System Pallet
+    $tritanopia-color-warning:    #e3e013 !default;
+    $tritanopia-color-warn-darth: #e3c313 !default;
+    $tritanopia-color-danger:     #e04848 !default;
+    $tritanopia-color-contrast:   #8447d7 !default;
+    $tritanopia-color-success:    $tritanopia-primary-avid !default;
+    $tritanopia-color-info:       $tritanopia-secondary-avid !default;
+    $tritanopia-color-darth:      #2b2b2b !default;
+
+/**
+* DEUTERANOMALIA SKIN
+*/// Primary Pallet
+    $deuteranomalia-primary: #5d5d3e !default;
+    $deuteranomalia-primary-avid:  #d6de9b !default;
+    $deuteranomalia-primary-vivid: #a2a26b !default;
+    $deuteranomalia-primary-darth: #686945 !default;
+
+    // Secondary Pallet
+    $deuteranomalia-secondary:       #6c809a !default;
+    $deuteranomalia-secondary-avid:  #a4c3e9 !default;
+    $deuteranomalia-secondary-vivid: #768da8 !default;
+    $deuteranomalia-secondary-darth: #414d5b !default;
+
+    // System Pallet
+    $deuteranomalia-color-warning:    #f4cd63 !default;
+    $deuteranomalia-color-warn-darth: #d19446 !default;
+    $deuteranomalia-color-danger:     #b46643 !default;
+    $deuteranomalia-color-contrast:   #305ec4 !default;
+    $deuteranomalia-color-success:    $deuteranomalia-primary-avid !default;
+    $deuteranomalia-color-info:       $deuteranomalia-secondary-avid !default;
+    $deuteranomalia-color-darth:      #302d2e !default;
+    // Structure Colors
+    $content-bg: $grey-lightest !default;
+
+/* THEMING */
+html {
+    // Primary Pallet
+    --primary:       #{$primary};
+    --primary-avid:  #{$primary-avid};
+    --primary-vivid: #{$primary-vivid};
+    --primary-darth: #{$primary-darth};
+
+    // Secondary Pallet
+    --secondary:       #{$secondary};
+    --secondary-avid:  #{$secondary-avid};
+    --secondary-vivid: #{$secondary-vivid};
+    --secondary-darth: #{$secondary-darth};
+
+    // Grey Scale
+    --light:         #{$light};
+    --grey-lightest: #{$grey-lightest};
+    --grey-lighter:  #{$grey-lighter};
+    --grey-light:    #{$grey-light};
+    --grey:          #{$grey};
+    --grey-darker:   #{$grey-darker};
+    --grey-darkest:  #{$grey-darkest};
+    --dark:          #{$dark};
+
+    // System Pallet
+    --color-warning:    #{$color-warning};
+    --color-warn-darth: #{$color-warn-darth};
+    --color-danger:     #{$color-danger};
+    --color-contrast:   #{$color-contrast};
+    --color-success:    #{$color-success};
+    --color-info:       #{$color-info};
+    --color-darth:      #{$color-darth};
+
+    // Structure Colors
+    --content-bg: #{$grey-lightest};
+    
+    &.skn-protanopia {
+        // Primary Pallet
+        --primary:       #{$protanopia-primary};
+        --primary-avid:  #{$protanopia-primary-avid};
+        --primary-vivid: #{$protanopia-primary-vivid};
+        --primary-darth: #{$protanopia-primary-darth};
+
+        // Secondary Pallet
+        --secondary:       #{$protanopia-secondary};
+        --secondary-avid:  #{$protanopia-secondary-avid};
+        --secondary-vivid: #{$protanopia-secondary-vivid};
+        --secondary-darth: #{$protanopia-secondary-darth};
+
+        // System Pallet
+        --color-warning:    #{$protanopia-color-warning};
+        --color-warn-darth: #{$protanopia-color-warn-darth};
+        --color-danger:     #{$protanopia-color-danger};
+        --color-contrast:   #{$protanopia-color-contrast};
+        --color-success:    var(--primary-avid);
+        --color-info:       var(--secondary-avid);
+        --color-darth:      #{$protanopia-color-darth};
+    }
+    &.skn-deuteranopia {
+        // Primary Pallet
+        --primary:       #{$deuteranopia-primary};
+        --primary-avid:  #{$deuteranopia-primary-avid};
+        --primary-vivid: #{$deuteranopia-primary-vivid};
+        --primary-darth: #{$deuteranopia-primary-darth};
+
+        // Secondary Pallet
+        --secondary:       #{$deuteranopia-secondary};
+        --secondary-avid:  #{$deuteranopia-secondary-avid};
+        --secondary-vivid: #{$deuteranopia-secondary-vivid};
+        --secondary-darth: #{$deuteranopia-secondary-darth};
+
+        // System Pallet
+        --color-warning:    #{$deuteranopia-color-warning};
+        --color-warn-darth: #{$deuteranopia-color-warn-darth};
+        --color-danger:     #{$deuteranopia-color-danger};
+        --color-contrast:   #{$deuteranopia-color-contrast};
+        --color-success:    var(--primary-avid);
+        --color-info:       var(--secondary-avid);
+        --color-darth:      #{$deuteranopia-color-darth};
+    }
+    &.skn-tritanopia {
+        // Primary Pallet
+        --primary:       #{$tritanopia-primary};
+        --primary-avid:  #{$tritanopia-primary-avid};
+        --primary-vivid: #{$tritanopia-primary-vivid};
+        --primary-darth: #{$tritanopia-primary-darth};
+
+        // Secondary Pallet
+        --secondary:       #{$tritanopia-secondary};
+        --secondary-avid:  #{$tritanopia-secondary-avid};
+        --secondary-vivid: #{$tritanopia-secondary-vivid};
+        --secondary-darth: #{$tritanopia-secondary-darth};
+
+        // System Pallet
+        --color-warning:    #{$tritanopia-color-warning};
+        --color-warn-darth: #{$tritanopia-color-warn-darth};
+        --color-danger:     #{$tritanopia-color-danger};
+        --color-contrast:   #{$tritanopia-color-contrast};
+        --color-success:    var(--primary-avid);
+        --color-info:       var(--secondary-avid);
+        --color-darth:      #{$tritanopia-color-darth};
+    }
+    &.skn-deuteranomalia {
+        // Primary Pallet
+        --primary:       #{$deuteranomalia-primary};
+        --primary-avid:  #{$deuteranomalia-primary-avid};
+        --primary-vivid: #{$deuteranomalia-primary-vivid};
+        --primary-darth: #{$deuteranomalia-primary-darth};
+
+        // Secondary Pallet
+        --secondary:       #{$deuteranomalia-secondary};
+        --secondary-avid:  #{$deuteranomalia-secondary-avid};
+        --secondary-vivid: #{$deuteranomalia-secondary-vivid};
+        --secondary-darth: #{$deuteranomalia-secondary-darth};
+
+        // System Pallet
+        --color-warning:    #{$deuteranomalia-color-warning};
+        --color-warn-darth: #{$deuteranomalia-color-warn-darth};
+        --color-danger:     #{$deuteranomalia-color-danger};
+        --color-contrast:   #{$deuteranomalia-color-contrast};
+        --color-success:    var(--primary-avid);
+        --color-info:       var(--secondary-avid);
+        --color-darth:      #{$deuteranomalia-color-darth};
+    }
+}
+
+$font-default: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif !default;
+$font-coursive: 'Revalia', cursive !default;
+
+$header-height: 70px !default;
+$sm-header-height: 50px !default;

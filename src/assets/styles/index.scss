@@ -1,6 +1,23 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Revalia&display=swap');
-@import './variables';
 @import './typegraphy';
+
+/* width */
+::-webkit-scrollbar {
+  height: 6px !important;
+  width: 6px !important;
+  /* Track */
+  &-track {
+    background: transparent;
+  }
+  /* Handle */
+  &-thumb {
+    background-color: rgba(0, 0, 0, .1);
+    border-radius: 5px;
+    /* Handle on hover */
+    &:hover {
+      background-color: rgba(0, 0, 0, .2);
+    }
+  }
+}
 
 * {
   box-sizing: border-box
@@ -12,11 +29,20 @@ html, body {
   padding: 0;
 }
 body {
-  background-color: $bg-color;
+  background-color: var(--content-bg);
   font-family: $font-default;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering:optimizeLegibility;
+  font-feature-settings:"kern";
+  -webkit-font-feature-settings:"kern";
+  -moz-font-feature-settings:"kern";
+  -moz-font-feature-settings:"kern=1";
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
 }
 
 .pointer {
@@ -36,7 +62,7 @@ body {
 
 .rounded-box,
 .rounded-list {
-  background-color: $grey-lighter;
+  background-color: var(--grey-lighter);
   overflow: hidden;
   padding: 1em;
 }

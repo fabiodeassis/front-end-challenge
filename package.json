@@ -5,27 +5,32 @@
   "description": "Desafio técnico de Front End",
   "author": "RickCardoso",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "skin": "node skin.js",
+    "serve": "set NODE_ENV=development && npm run skin && vue-cli-service serve",
+    "serve:boulder": "set SKIN=boulder && npm run serve",
+    "build": "set NODE_ENV=production && npm run skin && vue-cli-service build",
+    "build:boulder": "set SKIN=boulder && npm run build",
     "lint": "vue-cli-service lint",
     "storybook:build": "vue-cli-service storybook:build -c .storybook",
-    "storybook:serve": "vue-cli-service storybook:serve -p 6006 -c .storybook"
+    "storybook:serve": "vue-cli-service storybook:serve -p 6006 -c .storybook",
+    "lib": "vue-cli-service build --target lib --formats umd-min --no-clean --dest src/components/RsvTesteComponent --name \"RsvTesteComponent.[chunkhash]\" src/components/rsv-teste-component.vue"
   },
   "dependencies": {
-    "@capacitor/android": "^1.2.1",
-    "@capacitor/cli": "^1.2.1",
-    "@capacitor/core": "^1.2.1",
+    "@capacitor/android": "^1.4.0",
+    "@capacitor/core": "1.4.0",
     "@ionic/core": "^4.11.1",
+    "@ionic/pwa-elements": "^1.4.1",
     "@ionic/vue": "0.0.4",
     "axios": "^0.19.0",
     "core-js": "^2.6.5",
     "ionicons": "4.5.9-1",
     "register-service-worker": "^1.6.2",
-    "vue": "^2.6.10",
+    "vue": "^2.6.11",
     "vue-router": "^3.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
+    "@capacitor/cli": "1.4.0",
     "@storybook/addon-actions": "^4.1.0 || ^5.0.0",
     "@storybook/addon-knobs": "^4.1.0 || ^5.0.0",
     "@storybook/addon-links": "^4.1.0 || ^5.0.0",
@@ -39,12 +44,17 @@
     "babel-loader": "^8.0.6",
     "babel-preset-vue": "^2.0.2",
     "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "fs-extra": "^4.0.3",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
     "vue-cli-plugin-storybook": "^0.6.1",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.11"
+  },
+  "peerDependencies": {
+    "@storybook/core": "^4.1.0 || ^5.0.0"
   },
   "bugs": {
     "url": "https://github.com/RickCardoso/front-end-challenge/issues"

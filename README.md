@@ -28,6 +28,21 @@ yarn run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
+## Requisitos
+NodeJs >= 12.2
+VueCLi >= 2
+
+## Instalação
+instale o NodeJs
+Instale o VueCli globalmente
+
+```
+npm install -g @vue/cli
+```
+# OR
+```
+yarn global add @vue/cli
+```
 
 # front-end-challenge [original readme]
 

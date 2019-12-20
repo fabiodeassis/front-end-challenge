@@ -1,7 +1,7 @@
 <template>
   <header v-bind:class="{ logged: authenticated }">
     <div class="logo">
-      <bldrUiBrand model="name over-grey-light" />
+      <bldrUiBrand model="name over-grey-light" label="process.env.SKIN" />
     </div>
     <slot></slot>
   </header>
@@ -25,7 +25,7 @@ export default {
 header {
   -webkit-box-align: center;
   align-items: center;
-  background-color: $grey-lighter;
+  background-color: var(--grey-lighter);
   box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px;
   display: flex;
   height: $header-height;

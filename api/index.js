@@ -39,7 +39,8 @@ module.exports = app => {
         res.json({
             cardBrands: apiData.cardBrands,
             clientStatus: apiData.clientStatus,
-            transactionStatus: apiData.transactionStatus
+            transactionStatus: apiData.transactionStatus,
+            components: apiData.components
         });
     });
 

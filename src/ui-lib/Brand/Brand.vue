@@ -49,10 +49,10 @@ export default {
   }
   // Colors
   &.over-grey-light {
-    color: $primary
+    color: var(--primary)
   }
   &.over-primary {
-    color: #fff;
+    color: var(--white);
   }
 }
 </style>

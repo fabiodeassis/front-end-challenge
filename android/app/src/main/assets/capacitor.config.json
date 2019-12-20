@@ -2,7 +2,7 @@
   "appId": "br.com.f2p.challenge",
   "appName": "frontend-challenge",
   "bundledWebRuntime": false,
-  "npmClient": "yarn",
+  "npmClient": "npm",
   "webDir": "dist",
   "server": {
     "allowNavigation": [

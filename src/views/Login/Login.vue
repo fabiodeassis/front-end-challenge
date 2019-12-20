@@ -17,7 +17,7 @@ import LoginService from './LoginServices'
 
 import { Plugins } from '@capacitor/core'
 
-const { LocalNotifications } = Plugins
+const { LocalNotifications, Toast } = Plugins
 const service = LoginService.build()
 export default {
   name: 'Login',
@@ -33,6 +33,12 @@ export default {
     }
   },
   methods: {
+    async show () {
+      console.log('toast')
+      await Toast.show({
+        text: 'Hello!'
+      })
+    },
     login () {
       service
         .login(this.input)
@@ -53,6 +59,8 @@ export default {
       console.log(response)
     },
     push () {
+      this.show()
+
       LocalNotifications.schedule({
         notifications: [
           {
