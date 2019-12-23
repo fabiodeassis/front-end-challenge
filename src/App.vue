@@ -20,8 +20,9 @@ import bldHeader from '@/components/Header/Header.vue'
 import bldMain from '@/components/Main/Main.vue'
 import localService from '@/_services/LocalData'
 import AppService from './AppServices'
+import BackgroundTaskWeb from './../MyPlugins/TestPlugin'
 
-const { App, BackgroundTask, LocalNotifications } = Plugins
+const { App, BackgroundTask, Device, LocalNotifications } = Plugins
 const config = AppService.build()
 
 export default {
@@ -32,41 +33,28 @@ export default {
   },
   data () {
     return {
-      authenticated: localService.getAuth()
+      authenticated: localService.getAuth(),
+      taskId: null
     }
   },
-  mounted () {
+  async mounted () {
     if (!this.authenticated) {
       this.$router.replace({ name: 'login' })
     }
     this.getConfig()
+    const device = await this.getDeviceInfo()
 
     App.addListener('appStateChange', (state) => {
       if (!state.isActive) {
         // The app has become inactive. We should check if we have some work left to do, and, if so,
         // execute a background task that will allow us to finish that work before the OS
         // suspends or terminates our app:
-
-        let taskId = BackgroundTask.beforeExit(async () => {
-          // In this function We might finish an upload, let a network request
-          // finish, persist some data, or perform some other task
-
-          // Example of long task
-          console.log('INIT BACKGORUND TASK')
-          var start = new Date().getTime()
-          for (var i = 0; i < 1e18; i++) {
-            if ((new Date().getTime() - start) > 20000) {
-              this.callNotification()
-              break
-            }
-          }
-          // Must call in order to end our task otherwise
-          // we risk our app being terminated, and possibly
-          // being labeled as impacting battery life
-          BackgroundTask.finish({
-            taskId
-          })
-        })
+        console.log(device)
+        if (device.platform === 'web') {
+          BackgroundTaskWeb.beforeExit(this.beforeExit)
+        } else {
+          this.taskId = BackgroundTask.beforeExit(this.beforeExit)
+        }
       }
     })
   },
@@ -86,6 +74,29 @@ export default {
     },
     getConfigSuccess (response) {
       localService.setConfig(response)
+    },
+    async getDeviceInfo () {
+      return Device.getInfo()
+    },
+    async beforeExit () {
+      // In this function We might finish an upload, let a network request
+      // finish, persist some data, or perform some other task
+
+      // Example of long task
+      console.log('INIT BACKGORUND TASK')
+      var start = new Date().getTime()
+      for (var i = 0; i < 1e18; i++) {
+        if ((new Date().getTime() - start) > 20000) {
+          this.callNotification()
+          break
+        }
+      }
+      // Must call in order to end our task otherwise
+      // we risk our app being terminated, and possibly
+      // being labeled as impacting battery life
+      BackgroundTask.finish({
+        taskId: this.taskId
+      })
     },
     callNotification () {
       LocalNotifications.schedule({

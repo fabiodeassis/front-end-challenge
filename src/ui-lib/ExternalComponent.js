@@ -1,4 +1,4 @@
-export default async function externalComponent (component) {
+export default async function ExternalComponent (component) {
   const url = component.src
   const name = url.split('/').reverse()[0].match(/^(.*?)\.umd/)[1]
 
