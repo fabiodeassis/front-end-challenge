@@ -50,7 +50,7 @@ export default {
       localData.setAuthUser(response)
       if (response && response.firstName) {
         this.$emit('authenticated', true)
-        this.$router.replace({ name: 'clients' })
+        this.$router.replace({ name: 'game' })
       } else {
         console.log('The username and / or password is incorrect')
       }

@@ -42,8 +42,8 @@ export default {
       this.$router.replace({ name: 'login' })
     }
     this.getConfig()
+    /*
     const device = await this.getDeviceInfo()
-
     App.addListener('appStateChange', (state) => {
       if (!state.isActive) {
         // The app has become inactive. We should check if we have some work left to do, and, if so,
@@ -57,6 +57,7 @@ export default {
         }
       }
     })
+    */
   },
   methods: {
     setAuthenticated (status) {

@@ -9,7 +9,7 @@ const appRouter = new Router({
 })
 
 appRouter.beforeEach((to, from, next) => {
-  if (to.name !== 'login') {
+  if (to.name !== 'login' && to.name !== 'game') {
     if (localData.getAuth()) {
       next()
     } else {
