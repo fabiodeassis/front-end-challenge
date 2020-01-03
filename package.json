@@ -6,7 +6,7 @@
   "author": "RickCardoso",
   "scripts": {
     "skin": "node skin.js",
-    "serve": "set NODE_ENV=development && npm run skin && vue-cli-service serve",
+    "serve": "set NODE_ENV=development && npm run skin && vue-cli-service serve --open",
     "serve:boulder": "set SKIN=boulder && npm run serve",
     "build": "set NODE_ENV=production && npm run skin && vue-cli-service build",
     "build:boulder": "set SKIN=boulder && npm run build",
@@ -21,6 +21,7 @@
     "@ionic/core": "^4.11.1",
     "@ionic/pwa-elements": "^1.4.1",
     "@ionic/vue": "0.0.4",
+    "@reserve/atomic-ui": "C:\\Users\\fabio.assis\\source\\repos\\reserve-atomic-vue",
     "axios": "^0.19.0",
     "core-js": "^2.6.5",
     "ionicons": "4.5.9-1",
@@ -29,7 +30,7 @@
     "vue-router": "^3.0.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.5",
+    "@babel/core": "^7.7.7",
     "@capacitor/cli": "1.4.0",
     "@storybook/addon-actions": "^4.1.0 || ^5.0.0",
     "@storybook/addon-knobs": "^4.1.0 || ^5.0.0",
@@ -40,6 +41,7 @@
     "@vue/cli-plugin-pwa": "^3.8.0",
     "@vue/cli-service": "^3.8.0",
     "@vue/eslint-config-standard": "^4.0.0",
+    "@vue/eslint-config-airbnb": "^4.0.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.6",
     "babel-preset-vue": "^2.0.2",

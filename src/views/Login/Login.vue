@@ -1,6 +1,11 @@
 <template>
   <div class="login"><button type="button" v-on:click="push()">Login</button>
     <bldrUiBrand model="full over-primary" />
+    <rsv-banner
+        :position="position"
+      >
+        This is a banner!
+      </rsv-banner>
     <div class="rounded-box">
       <h2 class="page-title">Login</h2>
       <input type="text" name="username" v-model="input.username" placeholder="Username" />
@@ -17,19 +22,23 @@ import LoginService from './LoginServices'
 
 import { Plugins } from '@capacitor/core'
 
+import { RsvBanner } from '@reserve/atomic-ui'
+
 const { LocalNotifications, Toast } = Plugins
 const service = LoginService.build()
 export default {
   name: 'Login',
   components: {
-    bldrUiBrand
+    bldrUiBrand,
+    RsvBanner
   },
   data () {
     return {
       input: {
         username: 'john@gmail.com',
         password: 'passwd'
-      }
+      },
+      position: 'top'
     }
   },
   methods: {
