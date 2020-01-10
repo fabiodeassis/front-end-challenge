@@ -1,4 +1,4 @@
-import Rest from '@/_services/Rest'
+import Rest from '@/commons/Rest'
 
 /**
  * @typedef {ClientsService}

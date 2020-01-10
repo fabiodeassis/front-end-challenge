@@ -42,33 +42,35 @@ export default {
     }
   },
   methods: {
-    async show () {
-      console.log('toast')
+    async show (message) {
       await Toast.show({
-        text: 'Hello!'
+        text: message
       })
     },
     login () {
       service
         .login(this.input)
-        .then(this.loginSuccess, this.loginError)
+        .then(this.loginSuccess)
+        .catch(this.loginError)
     },
     loginSuccess (response) {
-      console.log(response)
+      const data = response.data
       localData.setAuth(true)
-      localData.setAuthUser(response)
-      if (response && response.firstName) {
+      localData.setAuthUser(data)
+      if (data && data.firstName) {
         this.$emit('authenticated', true)
         this.$router.replace({ name: 'game' })
+        this.show((response.message && response.message.text) || 'MSG.LOGIN_SUCCESS')
       } else {
-        console.log('The username and / or password is incorrect')
+        this.show('MSG.ERROR_AFTER_LOGIN')
       }
     },
-    loginError (response) {
-      console.log(response)
+    loginError (error) {
+      console.log(error, error.response, error.message)
+      this.show((error.message && error.message.text) || 'MSG.ERROR_LOGIN')
     },
     push () {
-      this.show()
+      this.show('MSG.SENDING_PUSH_NOTIFICATIONS')
 
       LocalNotifications.schedule({
         notifications: [

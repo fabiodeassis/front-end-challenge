@@ -69,7 +69,7 @@ export default class Rest extends Api {
   list (parameters = {}) {
     return this.get('', {
       params: parameters
-    }).then(response => response)
+    }).then(response => response, response => response)
   }
 
   /**

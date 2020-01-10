@@ -31,7 +31,6 @@ export default class Http extends Service {
   get (url) {
     return this.http
       .get(this.constructor.normalize(this.path, url))
-      .then(this.constructor.then)
   }
 
   /**
@@ -42,7 +41,6 @@ export default class Http extends Service {
   post (url, data) {
     return this.http
       .post(this.constructor.normalize(this.path, url), data)
-      .then(this.constructor.then)
   }
 
   /**
@@ -53,7 +51,6 @@ export default class Http extends Service {
   put (url, data) {
     return this.http
       .put(this.constructor.normalize(this.path, url), data)
-      .then(this.constructor.then)
   }
 
   /**
@@ -64,7 +61,6 @@ export default class Http extends Service {
   patch (url, data) {
     return this.http
       .patch(this.constructor.normalize(this.path, url), data)
-      .then(this.constructor.then)
   }
 
   /**
@@ -74,21 +70,6 @@ export default class Http extends Service {
   delete (url) {
     return this.http
       .delete(this.constructor.normalize(this.path, url))
-      .then(this.constructor.then)
-  }
-
-  /**
-   * @param {Object} response
-   * @returns {Object}
-   */
-  static then (response) {
-    if (!response.data) {
-      return {}
-    }
-    if (typeof response.data === 'string') {
-      return JSON.parse(response.data)
-    }
-    return response.data
   }
 
   /**

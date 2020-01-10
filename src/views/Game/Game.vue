@@ -19,6 +19,8 @@ export default {
   mounted () {
     let myGamePiece
     let myScore
+    let countScore = false
+    let scoreNumber = 0
     const myObstacles = []
     const container = document.getElementById('game')
     const myGameArea = {
@@ -80,6 +82,7 @@ export default {
 
         if (this.y < 0) {
           this.y = 0
+          this.gravitySpeed = 0
         }
       }
       this.crashWith = function (otherobj) {
@@ -104,6 +107,7 @@ export default {
       let x, height, gap, minHeight, maxHeight, minGap, maxGap
       for (let i = 0; i < myObstacles.length; i += 1) {
         if (myGamePiece.crashWith(myObstacles[i])) {
+          // GAME OVER
           return
         }
       }
@@ -112,7 +116,7 @@ export default {
       if (myGameArea.frameNo === 1 || everyinterval(150)) {
         x = myGameArea.canvas.width
         minHeight = 20
-        maxHeight = 200
+        maxHeight = myGameArea.canvas.height / 2
         height = Math.floor(Math.random() * (maxHeight - minHeight + 1) + minHeight)
         minGap = 50
         maxGap = 200
@@ -122,11 +126,23 @@ export default {
         myObstacles.push(new Component(10, x - height - gap, 'green', x, height + gap))
       }
       for (let i = 0; i < myObstacles.length; i += 1) {
-        myObstacles[i].x += (-1 - (myGameArea.frameNo / 2000))
+        myObstacles[i].x += (-1 - Math.round(myGameArea.frameNo / 2000))
         myObstacles[i].update()
       }
-      myScore.text = 'SCORE: ' + myGameArea.frameNo
+
+      if (!countScore && myObstacles[0].x < myGamePiece.x) {
+        countScore = true
+      }
+      if (countScore) {
+        scoreNumber += 1
+      }
+      myScore.text = 'SCORE: ' + scoreNumber
       myScore.update()
+
+      if (myObstacles[0].x + x < -20) {
+        myObstacles.shift()
+      }
+
       myGamePiece.newPos()
       myGamePiece.update()
     }

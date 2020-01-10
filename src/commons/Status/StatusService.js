@@ -3,9 +3,9 @@ import Rest from '@/commons/Rest'
 /**
  * @typedef {AppService}
  */
-export default class AppService extends Rest {
+export default class StatusService extends Rest {
   /**
    * @type {String}
    */
-  static resource = '/config'
+  static resource = '/status'
 }

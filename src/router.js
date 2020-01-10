@@ -4,6 +4,7 @@ import Routes from './views'
 import localData from '@/_services/LocalData'
 
 Vue.use(Router)
+console.log('LOADING ROUTER')
 const appRouter = new Router({
   routes: Routes
 })
